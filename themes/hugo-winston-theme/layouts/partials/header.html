@@ -1,0 +1,20 @@
+<div class='header'>
+  <a class="header-logo" href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+  <div class="menu-main">
+    <ul>
+      {{with site.Menus.main}}
+      {{ range .}}
+      <li class="menu-item-{{ .Name | lower }} active">
+        <a href="{{.URL}}">
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+      </li>
+      {{end}}
+      {{end}}
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
