@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.124.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Duy&#39;s Devlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//localhost:1313//images/duyavatar.jpeg">
+  <link rel="canonical" href="//localhost:1313/" />
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/extended.css">
+
+  
+    <meta name="description" content="Software engineer building tools people actually use."/>
+    <meta property="og:title" content="Duy Huynh"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="DuyNiverse, technical blogs, insights,... "/>
+    <meta property="og:url" content="//localhost:1313/"/>
+    <meta property="og:image" content="//localhost:1313//images/thumbnail.jpg"/>
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    
+  
+
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  
+
+  
+</head>
+
+
+
+
+<body class='page frame page-home'>
+  <div id="menu-main-mobile" class="menu-main-mobile">
+    <ul class="menu">
+        
+        
+            
+                <li class="menu-item-home">
+                    <a href="//localhost:1313/">Home</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-blog">
+                    <a href="//localhost:1313/posts/">Blog</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-about">
+                    <a href="//localhost:1313/about/">About</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-tags">
+                    <a href="//localhost:1313/tags/">Tags</a>
+                </li>
+            
+        
+    </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <a class="header-logo" href="/">Duy&#39;s Devlog</a>
+  <div class="menu-main">
+    <ul>
+      
+      
+      <li class="menu-item-home active">
+        <a href="/">
+          
+          <span>Home</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-blog active">
+        <a href="/posts/">
+          
+          <span>Blog</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-about active">
+        <a href="/about/">
+          
+          <span>About</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-tags active">
+        <a href="/tags/">
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
+      <div class="author author-large">
+  <img width="50" class="author-image" src="/images/duyavatar.jpeg" alt="Duy Huynh" />
+  <span class="author-name">Duy Huynh</span>
+  <span class="author-title">Software Engineer</span>
+</div> 
+
+<div class="intro">
+  <h1>
+    Duy Huynh<span class="dot">.</span>
+  </h1>
+  
+  <div class="intro-content"><p>Software engineer building tools people actually use — from a <strong>Google Summer of Code</strong> SDK, to Obsidian plugins with <strong>5,000+ combined installs</strong>, to AI-powered ecommerce. I care about performance, clean architecture, and shipping.</p>
+</div>
+  
+</div>
+
+
+
+<section class="portfolio-section">
+  <h2 class="portfolio-heading">Projects<span class="dot">.</span></h2>
+
+  <div class="projects-list">
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">GSoC 2024</span>
+            
+            <h3 class="project-name">Joplin Sync Library</h3>
+            <p class="project-tagline">Programmatic SDK for Joplin&#39;s cross-platform sync storage</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+           
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/joplin-sync-lib"
+            target="_blank"
+            rel="noopener noreferrer"
+            >SDK Repo</a
+          >
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/selfhost-joplin-email-to-note"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Email to Note</a
+          >
+           
+        </div>
+      </div>
+
+      <p class="project-short-desc">Selected for Google Summer of Code 2024. Built a TypeScript SDK using the Adapter pattern for programmatic read/write to Joplin storage backends — WebDav, Joplin Server, OneDrive, FileSystem. Also ships a serverless Email-to-Note service via GitHub Actions.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>Cross-platform Adapter pattern supports 3&#43; storage backends with sync awareness</li>
+              
+              <li>Serverless Email-to-Note pipeline via GitHub Actions — CI caching delivers 400% build perf boost (~45s saved per run)</li>
+              
+              <li>Clean TypeScript interfaces for external consumers building on top of Joplin storage</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>The goal was a single SDK that lets any client code treat WebDav, OneDrive, and Joplin Server identically — no caller should need to know which backend they&#39;re talking to. The Adapter pattern was the cleanest fit: each storage type becomes an adapter behind one interface.</li>
+              
+              <li>The Email-to-Note service was built to scratch my own itch — I wanted notes forwarded from my inbox into Joplin without running a persistent server. GitHub Actions as a trigger is free, always-on, and zero-infra. CI caching was added after noticing cold builds burned ~45s per run on dependency installs alone.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">TypeScript</span>
+        
+        <span class="tech-tag">WebDav</span>
+        
+        <span class="tech-tag">OneDrive API</span>
+        
+        <span class="tech-tag">GitHub Actions</span>
+        
+        <span class="tech-tag">Node.js</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">Freelance · AI Agent</span>
+            
+            <h3 class="project-name">QRality</h3>
+            <p class="project-tagline">Restaurant CMS where an AI agent handles customer service autonomously</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+          
+          <span class="project-link-muted">source undisclosed</span>
+          
+        </div>
+      </div>
+
+      <p class="project-short-desc">Full-stack platform for restaurant owners — online ordering, menus, and QR codes — with an integrated LLM agent that handles recommendations, pricing, and order processing without human intervention. Even a small food stall can run 24/7 digital service.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>ReAct agent with LangGraph autonomously handles customer queries, recommendations, and order flow</li>
+              
+              <li>RAG pipeline ingests multi-format data (PDFs, URLs, text) for grounded, precise responses</li>
+              
+              <li>Merchant dashboard with grouped chat histories, LLM feedback loop, and configurable bot personality</li>
+              
+              <li>HITL (Human-in-the-Loop) review mechanism for order confirmation and edge cases</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>The client&#39;s main constraint was accessibility: even a tiny family-run food stall needed to be able to use this. That meant the merchant-side UX had to be near-zero friction — QR code generation, simple configuration, no technical knowledge required.</li>
+              
+              <li>A pure chatbot felt too rigid for food ordering — menus change, customers ask unexpected things. A ReAct agent with tool calls gives the flexibility to fetch live menu data, calculate totals, and escalate to the owner when it&#39;s unsure. HITL isn&#39;t just a safety net; it&#39;s also a data collection loop for improving the agent over time.</li>
+              
+              <li>RAG was chosen over fine-tuning because the knowledge base (menus, policies) changes frequently per merchant. A retrieval layer lets each restaurant have its own knowledge store without retraining anything.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">React</span>
+        
+        <span class="tech-tag">FastAPI</span>
+        
+        <span class="tech-tag">Supabase</span>
+        
+        <span class="tech-tag">LangGraph</span>
+        
+        <span class="tech-tag">RAG</span>
+        
+        <span class="tech-tag">Python</span>
+        
+        <span class="tech-tag">ReAct Agent</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">AI-Powered · Deployed</span>
+            
+            <h3 class="project-name">MyTudo</h3>
+            <p class="project-tagline">P2P fashion ecommerce with AI outfit recommendations and automated listings</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+           
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/mytudo"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+           
+        </div>
+      </div>
+
+      <p class="project-short-desc">P2P marketplace for sustainable fashion with an AI recommendation engine that vectorizes wardrobe items for personalized outfit suggestions at &lt;100ms latency. Seller listings are automated: background removal in &lt;5s and LLM-based attribute extraction at 90%&#43; accuracy.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>Vectorized wardrobe items enable personalized outfit generation with &lt;100ms response latency</li>
+              
+              <li>Deduplication by hashing outfit content prevents redundant entries at scale</li>
+              
+              <li>RMBG-1.4 background removal (&lt;5s/image) and Gemma 4B LLM extracts brand, category, style with 90%&#43; accuracy in &lt;7s</li>
+              
+              <li>Python microservice for AI workloads, Layered Dependency Injection for testability</li>
+              
+              <li>Deployed on Render and Digital Ocean (Dockerized)</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>The outfit recommendation problem has a deduplication challenge: users upload the same item multiple times across different sessions. Rather than pixel-level comparison (expensive) or exact-match strings (too brittle), hashing a normalized representation of the item&#39;s attributes and storing it in Supabase gave us cheap O(1) duplicate detection at insert time.</li>
+              
+              <li>Separating the AI workloads into a Python microservice was a deliberate architecture call — Node.js is fine for the API layer, but Python owns the ML ecosystem. Mixing them in one process creates dependency hell. Clean service boundary, each does what it&#39;s best at.</li>
+              
+              <li>Background removal being &lt;5s matters because sellers are on mobile, standing in front of a rack. A 20s wait breaks the flow. RMBG-1.4 was chosen after benchmarking several models on that specific latency target.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">React</span>
+        
+        <span class="tech-tag">Node.js</span>
+        
+        <span class="tech-tag">FastAPI</span>
+        
+        <span class="tech-tag">Supabase</span>
+        
+        <span class="tech-tag">Python</span>
+        
+        <span class="tech-tag">Docker</span>
+        
+        <span class="tech-tag">Gemma 4B</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">5,000&#43; downloads · crates.io</span>
+            
+            <h3 class="project-name">AppImanager</h3>
+            <p class="project-tagline">Rust CLI that instantly registers any app in your Linux launcher</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+           
+          <a
+            class="project-link"
+            href="https://crates.io/crates/appim"
+            target="_blank"
+            rel="noopener noreferrer"
+            >crates.io</a
+          >
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/appimanager"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+           
+        </div>
+      </div>
+
+      <p class="project-short-desc">A Rust CLI tool with 5,000&#43; downloads on crates.io. Registers any application as a proper Linux Desktop Entry with one command — no manual `.desktop` file editing, no hunting through configuration directories.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>5,000&#43; downloads on crates.io — actively used in the Rust/Linux community</li>
+              
+              <li>Handles icon path resolution, Exec field formatting, and category classification</li>
+              
+              <li>Single binary, zero runtime dependencies</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>This started as a personal annoyance. Every time I installed an AppImage or a tarball app, I had to manually write a `.desktop` file, figure out where to put it, and log out to see it in the launcher. That&#39;s 10 minutes of busywork for something that should be one command.</li>
+              
+              <li>Rust was chosen because it produces a single static binary — no runtime, no Python install, no version conflicts. The whole tool is a file writer with path resolution logic, which Rust handles trivially. The rename from AppIm to AppImanager happened after realizing the original name was too obscure to be searchable on crates.io.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">Rust</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">3,800&#43; installs · Obsidian Plugin</span>
+            
+            <h3 class="project-name">Obsidian Git URL</h3>
+            <p class="project-tagline">Share Obsidian notes without broken image links</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+           
+          <a
+            class="project-link"
+            href="https://obsidian.md/plugins?id=git-url"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Plugin Store</a
+          >
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/obsidian-git-url"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+           
+        </div>
+      </div>
+
+      <p class="project-short-desc">When you copy a note from Obsidian, local asset paths break externally. This plugin replaces them with public GitHub URLs on the fly, so your notes share cleanly on any platform. Includes mass export mode to batch-convert multiple notes at once.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>Automatically resolves vault asset paths to GitHub raw URLs before copying</li>
+              
+              <li>Mass export: convert entire note batches with replaced links in one action</li>
+              
+              <li>Works with any GitHub-backed Obsidian vault — no extra config required</li>
+              
+              <li>3,800&#43; installs, actively maintained</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>The problem is specific but affects everyone who uses Obsidian with GitHub backup (which is most power users). Local image links like `![[photo.png]]` are meaningless outside the vault. The fix seems obvious in hindsight — just swap the path for the GitHub raw URL — but the tricky part is knowing the user&#39;s repo name, branch, and folder structure to construct the correct URL.</li>
+              
+              <li>Mass export was added after realizing single-note copy only solves half the problem. When publishing a blog post or sharing a full project writeup, you want to export an entire folder at once. The batch mode reads the vault structure and rewrites all links in a single pass.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">TypeScript</span>
+        
+        <span class="tech-tag">Obsidian API</span>
+        
+      </div>
+      
+    </div>
+    
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          
+          <div class="project-info">
+            
+            <span class="project-badge">1,400&#43; installs · VSCode Extension</span>
+            
+            <h3 class="project-name">Obsidian Visualizer</h3>
+            <p class="project-tagline">Obsidian-style knowledge graph and link suggestions inside VSCode</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+           
+          <a
+            class="project-link"
+            href="https://marketplace.visualstudio.com/items?itemName=khuongduy354.obsidian-visualizer"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Marketplace</a
+          >
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/obsidian-visualizer-vscode"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+           
+        </div>
+      </div>
+
+      <p class="project-short-desc">Brings Obsidian&#39;s graph view and backlink intelligence into VSCode. Event-driven incremental updates reduce re-parsing from O(n) to O(1). Dual-Map data structure gives O(1) bidirectional link retrieval. Scaled capacity from 1,000 to 10,000 notes; first-parse cut from 12s to 8s.</p>
+
+      <div class="project-row-toggles">
+        
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>Event-driven architecture: granular file-change events trigger only affected subgraph re-parses — O(n) → O(1)</li>
+              
+              <li>Dual-Map bidirectional index for O(1) forward and backward link lookups</li>
+              
+              <li>Async concurrent file reads cut first-parse latency from 12s to 8s on 1,000-file vaults</li>
+              
+              <li>Native IDE features: link autocomplete, go-to-definition, cross-platform (Desktop &#43; vscode.dev)</li>
+              
+            </ul>
+          </div>
+        </details>
+         
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              
+              <li>The naive implementation re-parses the entire vault on every file save. That works fine at 50 notes; it falls apart at 1,000. The core insight was that a file save only invalidates the links that reference that specific file — so the update scope is O(changed edges), not O(all files). Granular VSCode file-watcher events make this tractable.</li>
+              
+              <li>The Dual-Map structure came from realizing that both forward links (what does this file link to?) and backward links (what links to this file?) are equally important for graph rendering. A single adjacency list forces O(n) scans for one of the two directions. Two maps, each keyed the opposite way, gives O(1) for both at the cost of memory — a fair trade for a developer tool.</li>
+              
+              <li>Mass file read with concurrency control (rather than serial reads) was the single biggest latency win. Reading 1,000 files serially is I/O-bound and slow. Concurrent reads saturate the disk throughput and shaved ~4s off first-parse time.</li>
+              
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+
+      
+      <div class="tech-tags">
+        
+        <span class="tech-tag">TypeScript</span>
+        
+        <span class="tech-tag">VSCode API</span>
+        
+        <span class="tech-tag">Node.js</span>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <div class="more-projects">
+    <h3 class="more-projects-heading">More Projects</h3>
+    <div class="more-projects-grid">
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Chitter</h4>
+        <p class="more-project-tagline">Real-time chat with parallax UI across 7 stacks</p>
+        <p class="more-project-desc">Real-time chat with customizable themes, emojis, and a unique parallax background panel. Spans React, Node.js, Go, Kafka, MongoDB, Socket.io — all in Docker.</p>
+        
+        <div class="tech-tags">
+          
+          <span class="tech-tag">React</span>
+          
+          <span class="tech-tag">Node.js</span>
+          
+          <span class="tech-tag">Go</span>
+          
+          <span class="tech-tag">Kafka</span>
+          
+          <span class="tech-tag">MongoDB</span>
+          
+          <span class="tech-tag">Socket.io</span>
+          
+          <span class="tech-tag">Docker</span>
+          
+        </div>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/chitter"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Auction Web</h4>
+        <p class="more-project-tagline">Full-stack auction platform with manual and auto bidding</p>
+        <p class="more-project-desc">Extensive ecommerce auction site: manual/auto bidding, email services, real-time notifications.</p>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/Yan25-06/Project-Online-Auction"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Collaborative Editor</h4>
+        <p class="more-project-tagline">Google Docs-style editing with Operational Transformations</p>
+        <p class="more-project-desc">Real-time multi-user text editing with OT-based conflict resolution.</p>
+        
+        <div class="tech-tags">
+          
+          <span class="tech-tag">WebSocket</span>
+          
+          <span class="tech-tag">OT</span>
+          
+        </div>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/collabnote"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">PetCarx</h4>
+        <p class="more-project-tagline">Veterinary management with 90%&#43; SQL query optimization</p>
+        <p class="more-project-desc">Team project. Led query optimization by analyzing execution plans, proposing indexes, and benchmarking — most critical queries achieved 90%&#43; performance boost.</p>
+        
+        <div class="tech-tags">
+          
+          <span class="tech-tag">PostgreSQL</span>
+          
+          <span class="tech-tag">SQL</span>
+          
+        </div>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/NDPhon/PetCarx"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Git.rs</h4>
+        <p class="more-project-tagline">Git reimplemented in Rust</p>
+        <p class="more-project-desc">Implements git add and git commit from scratch — object storage, blob hashing, tree construction, and commit objects.</p>
+        
+        <div class="tech-tags">
+          
+          <span class="tech-tag">Rust</span>
+          
+        </div>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/git.rs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">DuY Compiler</h4>
+        <p class="more-project-tagline">Pascal-like language interpreter in Rust</p>
+        <p class="more-project-desc">Implemented tokenizer, recursive-descent parser, AST, and expression evaluator for a Pascal-like language.</p>
+        
+        <div class="tech-tags">
+          
+          <span class="tech-tag">Rust</span>
+          
+        </div>
+         
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Unsleepable</h4>
+        <p class="more-project-tagline">Full-stack forum platform</p>
+        <p class="more-project-desc">Forum app with user auth, threads, replies, and moderation.</p>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/unsleepable"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+      <div class="more-project-card">
+        <h4 class="more-project-name">Resume Sync</h4>
+        <p class="more-project-tagline">Resume generator with emergency persistence</p>
+        <p class="more-project-desc">Resume generation app with advanced data-loss prevention — keeps your edits safe even under unexpected failure conditions.</p>
+         
+        <div class="project-links" style="margin-top: 10px">
+          
+          <a
+            class="project-link"
+            href="https://github.com/khuongduy354/resume-sync"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<div class="blog-teaser">
+  <h2>Writing<span class="dot">.</span></h2>
+  <p>
+    Technical posts on engineering decisions, systems design, and ideas I find
+    worth exploring.
+  </p>
+  <a class="blog-cta" href="/posts/">Read the Blog</a>
+</div>
+ 
+    <div class="footer">
+  
+  <div class="footer-social">
+    
+      <span class="social-icon social-icon-twitter">
+        <a href="https://twitter.com/LKhngDuyHu43254" title="twitter" target="_blank" rel="noopener">
+          <img src="/images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-github">
+        <a href="https://github.com/khuongduy354" title="github" target="_blank" rel="noopener">
+          <img src="/images/social/github.svg" width="24" height="24" alt="github"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-linkedin">
+        <a href="https://www.linkedin.com/in/duy-hu%E1%BB%B3nh-7173931ba/" title="linkedin" target="_blank" rel="noopener">
+          <img src="/images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+        </a>
+      </span>
+    
+  </div>
+  
+</div>
+  </div>
+
+  
+
+  
+    <script type="text/javascript" src="/js/bundle.js"></script>
+  
+
+  
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+{
+    "featured": [
+        {
+            "id": "joplin-sync-lib",
+            "name": "Joplin Sync Library",
+            "badge": "GSoC 2024",
+            "tagline": "Programmatic SDK for Joplin's cross-platform sync storage",
+            "shortDesc": "Selected for Google Summer of Code 2024. Built a TypeScript SDK using the Adapter pattern for programmatic read/write to Joplin storage backends — WebDav, Joplin Server, OneDrive, FileSystem. Also ships a serverless Email-to-Note service via GitHub Actions.",
+            "bullets": [
+                "Cross-platform Adapter pattern supports 3+ storage backends with sync awareness",
+                "Serverless Email-to-Note pipeline via GitHub Actions — CI caching delivers 400% build perf boost (~45s saved per run)",
+                "Clean TypeScript interfaces for external consumers building on top of Joplin storage"
+            ],
+            "thinking": [
+                "The goal was a single SDK that lets any client code treat WebDav, OneDrive, and Joplin Server identically — no caller should need to know which backend they're talking to. The Adapter pattern was the cleanest fit: each storage type becomes an adapter behind one interface.",
+                "The Email-to-Note service was built to scratch my own itch — I wanted notes forwarded from my inbox into Joplin without running a persistent server. GitHub Actions as a trigger is free, always-on, and zero-infra. CI caching was added after noticing cold builds burned ~45s per run on dependency installs alone."
+            ],
+            "tech": [
+                "TypeScript",
+                "WebDav",
+                "OneDrive API",
+                "GitHub Actions",
+                "Node.js"
+            ],
+            "links": [
+                {
+                    "label": "SDK Repo",
+                    "url": "https://github.com/khuongduy354/joplin-sync-lib"
+                },
+                {
+                    "label": "Email to Note",
+                    "url": "https://github.com/khuongduy354/selfhost-joplin-email-to-note"
+                }
+            ]
+        },
+        {
+            "id": "qrality",
+            "name": "QRality",
+            "badge": "Freelance · AI Agent",
+            "tagline": "Restaurant CMS where an AI agent handles customer service autonomously",
+            "shortDesc": "Full-stack platform for restaurant owners — online ordering, menus, and QR codes — with an integrated LLM agent that handles recommendations, pricing, and order processing without human intervention. Even a small food stall can run 24/7 digital service.",
+            "bullets": [
+                "ReAct agent with LangGraph autonomously handles customer queries, recommendations, and order flow",
+                "RAG pipeline ingests multi-format data (PDFs, URLs, text) for grounded, precise responses",
+                "Merchant dashboard with grouped chat histories, LLM feedback loop, and configurable bot personality",
+                "HITL (Human-in-the-Loop) review mechanism for order confirmation and edge cases"
+            ],
+            "thinking": [
+                "The client's main constraint was accessibility: even a tiny family-run food stall needed to be able to use this. That meant the merchant-side UX had to be near-zero friction — QR code generation, simple configuration, no technical knowledge required.",
+                "A pure chatbot felt too rigid for food ordering — menus change, customers ask unexpected things. A ReAct agent with tool calls gives the flexibility to fetch live menu data, calculate totals, and escalate to the owner when it's unsure. HITL isn't just a safety net; it's also a data collection loop for improving the agent over time.",
+                "RAG was chosen over fine-tuning because the knowledge base (menus, policies) changes frequently per merchant. A retrieval layer lets each restaurant have its own knowledge store without retraining anything."
+            ],
+            "tech": [
+                "React",
+                "FastAPI",
+                "Supabase",
+                "LangGraph",
+                "RAG",
+                "Python",
+                "ReAct Agent"
+            ],
+            "links": []
+        },
+        {
+            "id": "mytudo",
+            "name": "MyTudo",
+            "badge": "AI-Powered · Deployed",
+            "tagline": "P2P fashion ecommerce with AI outfit recommendations and automated listings",
+            "shortDesc": "P2P marketplace for sustainable fashion with an AI recommendation engine that vectorizes wardrobe items for personalized outfit suggestions at <100ms latency. Seller listings are automated: background removal in <5s and LLM-based attribute extraction at 90%+ accuracy.",
+            "bullets": [
+                "Vectorized wardrobe items enable personalized outfit generation with <100ms response latency",
+                "Deduplication by hashing outfit content prevents redundant entries at scale",
+                "RMBG-1.4 background removal (<5s/image) and Gemma 4B LLM extracts brand, category, style with 90%+ accuracy in <7s",
+                "Python microservice for AI workloads, Layered Dependency Injection for testability",
+                "Deployed on Render and Digital Ocean (Dockerized)"
+            ],
+            "thinking": [
+                "The outfit recommendation problem has a deduplication challenge: users upload the same item multiple times across different sessions. Rather than pixel-level comparison (expensive) or exact-match strings (too brittle), hashing a normalized representation of the item's attributes and storing it in Supabase gave us cheap O(1) duplicate detection at insert time.",
+                "Separating the AI workloads into a Python microservice was a deliberate architecture call — Node.js is fine for the API layer, but Python owns the ML ecosystem. Mixing them in one process creates dependency hell. Clean service boundary, each does what it's best at.",
+                "Background removal being <5s matters because sellers are on mobile, standing in front of a rack. A 20s wait breaks the flow. RMBG-1.4 was chosen after benchmarking several models on that specific latency target."
+            ],
+            "tech": [
+                "React",
+                "Node.js",
+                "FastAPI",
+                "Supabase",
+                "Python",
+                "Docker",
+                "Gemma 4B"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/mytudo"
+                }
+            ]
+        },
+        {
+            "id": "appimanager",
+            "name": "AppImanager",
+            "badge": "5,000+ downloads · crates.io",
+            "tagline": "Rust CLI that instantly registers any app in your Linux launcher",
+            "shortDesc": "A Rust CLI tool with 5,000+ downloads on crates.io. Registers any application as a proper Linux Desktop Entry with one command — no manual `.desktop` file editing, no hunting through configuration directories.",
+            "bullets": [
+                "5,000+ downloads on crates.io — actively used in the Rust/Linux community",
+                "Handles icon path resolution, Exec field formatting, and category classification",
+                "Single binary, zero runtime dependencies"
+            ],
+            "thinking": [
+                "This started as a personal annoyance. Every time I installed an AppImage or a tarball app, I had to manually write a `.desktop` file, figure out where to put it, and log out to see it in the launcher. That's 10 minutes of busywork for something that should be one command.",
+                "Rust was chosen because it produces a single static binary — no runtime, no Python install, no version conflicts. The whole tool is a file writer with path resolution logic, which Rust handles trivially. The rename from AppIm to AppImanager happened after realizing the original name was too obscure to be searchable on crates.io."
+            ],
+            "tech": [
+                "Rust"
+            ],
+            "links": [
+                {
+                    "label": "crates.io",
+                    "url": "https://crates.io/crates/appim"
+                },
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/appimanager"
+                }
+            ]
+        },
+        {
+            "id": "obsidian-git-url",
+            "name": "Obsidian Git URL",
+            "badge": "3,800+ installs · Obsidian Plugin",
+            "tagline": "Share Obsidian notes without broken image links",
+            "shortDesc": "When you copy a note from Obsidian, local asset paths break externally. This plugin replaces them with public GitHub URLs on the fly, so your notes share cleanly on any platform. Includes mass export mode to batch-convert multiple notes at once.",
+            "bullets": [
+                "Automatically resolves vault asset paths to GitHub raw URLs before copying",
+                "Mass export: convert entire note batches with replaced links in one action",
+                "Works with any GitHub-backed Obsidian vault — no extra config required",
+                "3,800+ installs, actively maintained"
+            ],
+            "thinking": [
+                "The problem is specific but affects everyone who uses Obsidian with GitHub backup (which is most power users). Local image links like `![[photo.png]]` are meaningless outside the vault. The fix seems obvious in hindsight — just swap the path for the GitHub raw URL — but the tricky part is knowing the user's repo name, branch, and folder structure to construct the correct URL.",
+                "Mass export was added after realizing single-note copy only solves half the problem. When publishing a blog post or sharing a full project writeup, you want to export an entire folder at once. The batch mode reads the vault structure and rewrites all links in a single pass."
+            ],
+            "tech": [
+                "TypeScript",
+                "Obsidian API"
+            ],
+            "links": [
+                {
+                    "label": "Plugin Store",
+                    "url": "https://obsidian.md/plugins?id=git-url"
+                },
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/obsidian-git-url"
+                }
+            ]
+        },
+        {
+            "id": "obsidian-visualizer",
+            "name": "Obsidian Visualizer",
+            "badge": "1,400+ installs · VSCode Extension",
+            "tagline": "Obsidian-style knowledge graph and link suggestions inside VSCode",
+            "shortDesc": "Brings Obsidian's graph view and backlink intelligence into VSCode. Event-driven incremental updates reduce re-parsing from O(n) to O(1). Dual-Map data structure gives O(1) bidirectional link retrieval. Scaled capacity from 1,000 to 10,000 notes; first-parse cut from 12s to 8s.",
+            "bullets": [
+                "Event-driven architecture: granular file-change events trigger only affected subgraph re-parses — O(n) → O(1)",
+                "Dual-Map bidirectional index for O(1) forward and backward link lookups",
+                "Async concurrent file reads cut first-parse latency from 12s to 8s on 1,000-file vaults",
+                "Native IDE features: link autocomplete, go-to-definition, cross-platform (Desktop + vscode.dev)"
+            ],
+            "thinking": [
+                "The naive implementation re-parses the entire vault on every file save. That works fine at 50 notes; it falls apart at 1,000. The core insight was that a file save only invalidates the links that reference that specific file — so the update scope is O(changed edges), not O(all files). Granular VSCode file-watcher events make this tractable.",
+                "The Dual-Map structure came from realizing that both forward links (what does this file link to?) and backward links (what links to this file?) are equally important for graph rendering. A single adjacency list forces O(n) scans for one of the two directions. Two maps, each keyed the opposite way, gives O(1) for both at the cost of memory — a fair trade for a developer tool.",
+                "Mass file read with concurrency control (rather than serial reads) was the single biggest latency win. Reading 1,000 files serially is I/O-bound and slow. Concurrent reads saturate the disk throughput and shaved ~4s off first-parse time."
+            ],
+            "tech": [
+                "TypeScript",
+                "VSCode API",
+                "Node.js"
+            ],
+            "links": [
+                {
+                    "label": "Marketplace",
+                    "url": "https://marketplace.visualstudio.com/items?itemName=khuongduy354.obsidian-visualizer"
+                },
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/obsidian-visualizer-vscode"
+                }
+            ]
+        }
+    ],
+    "more": [
+        {
+            "id": "chitter",
+            "name": "Chitter",
+            "tagline": "Real-time chat with parallax UI across 7 stacks",
+            "shortDesc": "Real-time chat with customizable themes, emojis, and a unique parallax background panel. Spans React, Node.js, Go, Kafka, MongoDB, Socket.io — all in Docker.",
+            "tech": [
+                "React",
+                "Node.js",
+                "Go",
+                "Kafka",
+                "MongoDB",
+                "Socket.io",
+                "Docker"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/chitter"
+                }
+            ]
+        },
+        {
+            "id": "auction-web",
+            "name": "Auction Web",
+            "tagline": "Full-stack auction platform with manual and auto bidding",
+            "shortDesc": "Extensive ecommerce auction site: manual/auto bidding, email services, real-time notifications.",
+            "tech": [],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/Yan25-06/Project-Online-Auction"
+                }
+            ]
+        },
+        {
+            "id": "collaborative-editor",
+            "name": "Collaborative Editor",
+            "tagline": "Google Docs-style editing with Operational Transformations",
+            "shortDesc": "Real-time multi-user text editing with OT-based conflict resolution.",
+            "tech": [
+                "WebSocket",
+                "OT"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/collabnote"
+                }
+            ]
+        },
+        {
+            "id": "petcarx",
+            "name": "PetCarx",
+            "tagline": "Veterinary management with 90%+ SQL query optimization",
+            "shortDesc": "Team project. Led query optimization by analyzing execution plans, proposing indexes, and benchmarking — most critical queries achieved 90%+ performance boost.",
+            "tech": [
+                "PostgreSQL",
+                "SQL"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/NDPhon/PetCarx"
+                }
+            ]
+        },
+        {
+            "id": "git-rs",
+            "name": "Git.rs",
+            "tagline": "Git reimplemented in Rust",
+            "shortDesc": "Implements git add and git commit from scratch — object storage, blob hashing, tree construction, and commit objects.",
+            "tech": [
+                "Rust"
+            ],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/git.rs"
+                }
+            ]
+        },
+        {
+            "id": "duy-compiler",
+            "name": "DuY Compiler",
+            "tagline": "Pascal-like language interpreter in Rust",
+            "shortDesc": "Implemented tokenizer, recursive-descent parser, AST, and expression evaluator for a Pascal-like language.",
+            "tech": [
+                "Rust"
+            ],
+            "links": []
+        },
+        {
+            "id": "unsleepable",
+            "name": "Unsleepable",
+            "tagline": "Full-stack forum platform",
+            "shortDesc": "Forum app with user auth, threads, replies, and moderation.",
+            "tech": [],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/unsleepable"
+                }
+            ]
+        },
+        {
+            "id": "resume-sync",
+            "name": "Resume Sync",
+            "tagline": "Resume generator with emergency persistence",
+            "shortDesc": "Resume generation app with advanced data-loss prevention — keeps your edits safe even under unexpected failure conditions.",
+            "tech": [],
+            "links": [
+                {
+                    "label": "GitHub",
+                    "url": "https://github.com/khuongduy354/resume-sync"
+                }
+            ]
+        }
+    ]
+}

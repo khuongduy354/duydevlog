@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Duy&#39;s Devlog</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Blog on Duy&#39;s Devlog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Jan 2026 12:00:00 +0700</lastBuildDate>
+    <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My personalized Docs-Driven Development</title>
+      <link>//localhost:1313/posts/devex/docs_driven_dev/</link>
+      <pubDate>Mon, 05 Jan 2026 12:00:00 +0700</pubDate>
+      <guid>//localhost:1313/posts/devex/docs_driven_dev/</guid>
+      <description>I usually have 3 types of documentation in my projects:&#xA;devlogs (in github), everyone can read, gear more toward developer README.md (in github), everyone can read, THE SINGLE SOURCE OF TRUTH about the project. The only .md file that allows to exists outside devlogs. How to abcxyz, it can link to files in devlogs for more details (testing, architecture, design decisions,&amp;hellip;) duylocaldev (locally), may contain secrets, passwords, sensitive notes,&amp;hellip; devlogs</description>
+    </item>
+    <item>
+      <title>Pikachu Game - Simple yet Algorithmic</title>
+      <link>//localhost:1313/posts/pikachu/</link>
+      <pubDate>Tue, 30 Apr 2024 00:53:02 +0700</pubDate>
+      <guid>//localhost:1313/posts/pikachu/</guid>
+      <description>Pikachu matching game - Simple yet algorithmic A simple Puzzle game that packs quite a bunch in Algorithm &amp;amp; Data structure in Programming.&#xA;Game rules Pick 2 pokemons with the exact same images, if the path between the 2 isn&amp;rsquo;t blocked and obey following rule:&#xA;path formed shoudn&amp;rsquo;t have more than 3 edges (in other word: have more than 2 turning points)&#xA;Below are the valid path shapes, they have I, L, U, Z shapes&amp;hellip;</description>
+    </item>
+    <item>
+      <title>Tiktok devlog</title>
+      <link>//localhost:1313/posts/tiktok/</link>
+      <pubDate>Sun, 18 Feb 2024 22:24:58 +0700</pubDate>
+      <guid>//localhost:1313/posts/tiktok/</guid>
+      <description>Tiktok Clone Programming blog I want to learn backend API development through making a tiktok API. It&amp;rsquo;d be very basic, I can use to store my private photos/videos, beside that, I don&amp;rsquo;t use it much, it&amp;rsquo;s primarily for learning.&#xA;Firstly, I list out some features I&amp;rsquo;d like to implement:&#xA;Authentication/Authorization: email, password based Upload videos Users follow users Allow to update users profile Like, comment videos Basic feed generation for users Tech stack Let use Express.</description>
+    </item>
+    <item>
+      <title>Supabase Usage</title>
+      <link>//localhost:1313/posts/supabase-usage/</link>
+      <pubDate>Tue, 23 Jan 2024 22:24:58 +0700</pubDate>
+      <guid>//localhost:1313/posts/supabase-usage/</guid>
+      <description>Supabase usage How I use supabase for very basic things, in a simplest way, tech stack: React + Nodejs&#xA;Database Setup database through GUI in supabase is fine SQL editor, can be used for tinkering with database query Supabase&amp;rsquo;s SQL function supports is my favorite feature. Basically, we define a SQL function (a bunch of SQL statements), and invoke the function name only =&amp;gt; No worry for ORM, writing raw SQL,&amp;hellip; !</description>
+    </item>
+    <item>
+      <title>Who controls the past controls the future. Who controls the present controls the past</title>
+      <link>//localhost:1313/posts/controls-the-past/</link>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/controls-the-past/</guid>
+      <description>He moved over to the window Since about that time, war had been literally continuous, though strictly speaking it had not always been the same war. For several months during his childhood there had been confused street fighting in London itself, some of which he remembered vividly.&#xA;Inside the flat a fruity voice was reading out a list of figures which had something to do with the production of pig iron.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>//localhost:1313/posts/series-autochess/p1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/series-autochess/p1/</guid>
+      <description>Series làm game AutoChess như Đấu Trường Chân Lý (TFT) nhưng mà đồ họa 2D - P1 Tổng quan Vào một buổi tối nào đó tui nổi hứng và muốn làm con game này :D, Engine được dùng trong bài viết là Godot 4.3.&#xA;Thiết kế bao quát Bàn cờ Bàn cờ square (mỗi ô là một tam giác thay vì lục giác), vì thường 2D thì hình vuông sẽ dễ tính, còn 3D thì lục giác dễ tính hơn.</description>
+    </item>
+  </channel>
+</rss>

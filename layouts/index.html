@@ -1,0 +1,14 @@
+{{ define "body_classes" }}page-home{{ end }} {{ define "main" }} {{ if
+.Site.Params.showAuthorOnHomepage }} {{ partial "author-large.html" . }} {{ end
+}}
+
+<div class="intro">
+  <h1>
+    {{ .Title }}{{ if .Site.Params.addDot }}<span class="dot">.</span>{{ end }}
+  </h1>
+  {{ if .Site.Params.showIntroContentOnHomepage }}
+  <div class="intro-content">{{ .Content }}</div>
+  {{ end }}
+</div>
+
+{{ partial "portfolio.html" . }} {{ end }} {{ define "footer_js" }} {{ end }}

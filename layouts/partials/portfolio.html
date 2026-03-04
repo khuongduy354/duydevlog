@@ -1,0 +1,124 @@
+{{ $projects := .Site.Data.projects }}
+
+<section class="portfolio-section">
+  <h2 class="portfolio-heading">Projects<span class="dot">.</span></h2>
+
+  <div class="projects-list">
+    {{ range $projects.featured }}
+    <div class="project-row">
+      <div class="project-row-header">
+        <div class="project-row-left">
+          {{ if .image }}
+          <img
+            class="project-image"
+            src="{{ .image | relURL }}"
+            alt="{{ .name }}"
+          />
+          {{ else }}
+          <div class="project-image-placeholder">
+            <span>IMG<br />SOON</span>
+          </div>
+          {{ end }}
+          <div class="project-info">
+            {{ if .badge }}
+            <span class="project-badge">{{ .badge }}</span>
+            {{ end }}
+            <h3 class="project-name">{{ .name }}</h3>
+            <p class="project-tagline">{{ .tagline }}</p>
+          </div>
+        </div>
+        <div class="project-row-links">
+          {{ if .links }} {{ range .links }}
+          <a
+            class="project-link"
+            href="{{ .url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ .label }}</a
+          >
+          {{ end }} {{ else }}
+          <span class="project-link-muted">source undisclosed</span>
+          {{ end }}
+        </div>
+      </div>
+
+      <p class="project-short-desc">{{ .shortDesc }}</p>
+
+      <div class="project-row-toggles">
+        {{ if .bullets }}
+        <details class="project-details">
+          <summary>What was built</summary>
+          <div class="details-content">
+            <ul>
+              {{ range .bullets }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </details>
+        {{ end }} {{ if .thinking }}
+        <details class="project-details project-thinking">
+          <summary>How I thought about it</summary>
+          <div class="details-content">
+            <ul>
+              {{ range .thinking }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+        </details>
+        {{ end }}
+      </div>
+
+      {{ if .tech }}
+      <div class="tech-tags">
+        {{ range .tech }}
+        <span class="tech-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+
+  <div class="more-projects">
+    <h3 class="more-projects-heading">More Projects</h3>
+    <div class="more-projects-grid">
+      {{ range $projects.more }}
+      <div class="more-project-card">
+        <h4 class="more-project-name">{{ .name }}</h4>
+        <p class="more-project-tagline">{{ .tagline }}</p>
+        <p class="more-project-desc">{{ .shortDesc }}</p>
+        {{ if .tech }}
+        <div class="tech-tags">
+          {{ range .tech }}
+          <span class="tech-tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }} {{ if .links }}
+        <div class="project-links" style="margin-top: 10px">
+          {{ range .links }}
+          <a
+            class="project-link"
+            href="{{ .url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ .label }}</a
+          >
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<div class="blog-teaser">
+  <h2>Writing<span class="dot">.</span></h2>
+  <p>
+    Technical posts on engineering decisions, systems design, and ideas I find
+    worth exploring.
+  </p>
+  <a class="blog-cta" href="/posts/">Read the Blog</a>
+</div>

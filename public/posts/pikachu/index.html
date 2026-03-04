@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Duy&#39;s Devlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//localhost:1313//images/duyavatar.jpeg">
+  <link rel="canonical" href="//localhost:1313/posts/pikachu/" />
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/extended.css">
+
+  
+    
+    <meta property="og:title" content="Pikachu Game - Simple yet Algorithmic"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="DuyNiverse, technical blogs, insights,... "/>
+    <meta property="og:url" content="//localhost:1313/posts/pikachu/"/>
+    <meta property="og:image" content="//localhost:1313//images/thumbnail.jpg"/>
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    
+  
+
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  
+
+  
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  <div id="menu-main-mobile" class="menu-main-mobile">
+    <ul class="menu">
+        
+        
+            
+                <li class="menu-item-home">
+                    <a href="//localhost:1313/">Home</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-blog">
+                    <a href="//localhost:1313/posts/">Blog</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-about">
+                    <a href="//localhost:1313/about/">About</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-tags">
+                    <a href="//localhost:1313/tags/">Tags</a>
+                </li>
+            
+        
+    </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <a class="header-logo" href="/">Duy&#39;s Devlog</a>
+  <div class="menu-main">
+    <ul>
+      
+      
+      <li class="menu-item-home active">
+        <a href="/">
+          
+          <span>Home</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-blog active">
+        <a href="/posts/">
+          
+          <span>Blog</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-about active">
+        <a href="/about/">
+          
+          <span>About</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-tags active">
+        <a href="/tags/">
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
+    
+  <div class="blog">
+    
+      <div class="author">
+  <img width="30" class="author-image" src="/images/duyavatar.jpeg" alt="Duy Huynh" />
+  <span class="author-name">Duy Huynh</span>
+  <span class="author-divider"></span>
+  <span class="author-date">April 30, 2024</span>
+</div>
+    
+    <div class="intro">
+      <h1>Pikachu Game - Simple yet Algorithmic<span class="dot">.</span></h1>
+      
+    </div>
+    <div class="content">
+      <h1 id="pikachu-matching-game---simple-yet-algorithmic">Pikachu matching game - Simple yet algorithmic</h1>
+<blockquote>
+<p>A simple Puzzle game that packs quite a bunch in Algorithm &amp; Data structure in Programming.</p>
+</blockquote>
+<p><img src="https://st.gamevui.com/images/image/2017/05/06/pikachu-hd2.jpg" alt=""></p>
+<h3 id="game-rules">Game rules</h3>
+<p>Pick 2 pokemons with the exact same images, if the path between the 2 isn&rsquo;t blocked and obey following rule:</p>
+<blockquote>
+<p>path formed shoudn&rsquo;t have more than 3 edges (in other word: have more than 2 turning points)</p>
+</blockquote>
+<p>Below are the valid path shapes, they have I, L, U, Z shapes&hellip;</p>
+<p><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/438204593_3789105254641855_4752512429503022204_n.png?stp=dst-png_p296x100&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=5f2048&amp;_nc_eui2=AeEKSsWB_Y9OkCzTBwQWfMfTDSM5Qc7oimwNIzlBzuiKbGs-axKefW64MBQvRVumLU7SUEtoKJ9cbM8SzDEHbTeV&amp;_nc_ohc=S_JpdMjiUIYAb7_N3xo&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_Q7cD1QG4lCFcQa7DRkGOhpkHRh1dLIn2-a07hn0N5wYGThhLhw&amp;oe=6657578C" alt=""></p>
+<p><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/437001493_1880604409071794_8216244788617306277_n.png?stp=dst-png_p160x160&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=5f2048&amp;_nc_eui2=AeG9QpcDRmWfzgjJudfX0myXrCfnT8eUXnCsJ-dPx5RecOFfTMmoS3jErws4i6FAshAzzPXZdIDKqlopd_frqVcF&amp;_nc_ohc=wXoiae1cv9QAb5yceRg&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_Q7cD1QH0lBPf2Q4_bwTuQAtXwtfnKYasVDlvTn9Hc_ZvEaYCTw&amp;oe=66575581" alt=""></p>
+<p><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/437089157_801805358530828_2881197013834727166_n.png?stp=dst-png_s206x206&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=5f2048&amp;_nc_eui2=AeHmeXlSNBVTBGbp4ITULcY_mf0lKIbrFwKZ_SUohusXAlQZhpBbLmkmznlFgV-_BpTVcLMejbO27pqW3S_QL27Z&amp;_nc_ohc=dhoWazOCMj4Q7kNvgEC8zfO&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_Q7cD1QEXRIG5jeaaEUhS7W_M1eTh05EpeveftStgJHrIfqKSTg&amp;oe=665760B9" alt=""></p>
+<p><img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/438204615_354231607157376_1876487270217619274_n.png?stp=dst-png_p206x206&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=5f2048&amp;_nc_eui2=AeEwwRr3he6qCUqm4OpD_uaqnkV_BBAShGieRX8EEBKEaB-ZKcP8FRuzcAIUpqGU9C5QKMibD6gP30iU9KIwgz5n&amp;_nc_ohc=zIzXDhctNFIQ7kNvgHRIpei&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.xx&amp;oh=03_Q7cD1QHro7WJ4BCsK95-rjJSl745B9z3gUQMYfXdop1v1vXGIg&amp;oe=66573E0D" alt=""></p>
+<h1 id="algorithms">Algorithms</h1>
+<p>To represent the board, use a 2D array, each cell is a pokemon (represented by objects with unique ids)</p>
+<h2 id="pathfinding-algorithm">Pathfinding algorithm</h2>
+<ul>
+<li>
+<p>At its core of this game, is the pathfinding algorithm, in order to determine the path from pokemon A -&gt; pokemon B, and to analyze its shape.</p>
+</li>
+<li>
+<p>To simplify the problem: finding path from A to B with at most 2 turning points. Path should be return as a list of points (used for game path rendering)</p>
+</li>
+</ul>
+<h3 id="my-strategies">My strategies</h3>
+<ul>
+<li>brute force: dfs or bfs, then tracing back the path to calculate the number of turning points, invalidate if it&rsquo;s &gt; 2</li>
+<li>to detect a turning point: we must know 3 consecutive points, if none of these 3 points is on the same axis (x == x or y == y) then a turn is made.</li>
+<li>A* (AStar): brute force is fine, but let optimize this a bit further, I chose AStar (A*) algorithm.
+<ul>
+<li>I placed a heavy cost on turning point, g cost (cost to distance) has a much lower cost, I don&rsquo;t calculate f cost since it not needed.</li>
+<li>I do a search first, then trace back the path, make sure it&rsquo;s &lt;= 2 turning points</li>
+<li>yes and that&rsquo;s it, it&rsquo;s more intentional when doing the pathfinding, compared to brute force, which reduce a lot of unecessary checks.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://private-user-images.githubusercontent.com/42113313/316292466-b733d684-81f2-44bf-af3c-c1bc18b66bbd.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0MTI3MTIsIm5iZiI6MTcxNDQxMjQxMiwicGF0aCI6Ii80MjExMzMxMy8zMTYyOTI0NjYtYjczM2Q2ODQtODFmMi00NGJmLWFmM2MtYzFiYzE4YjY2YmJkLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MjklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDI5VDE3NDAxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThiMjBkMDUxNTZhYWJlOTMxM2ViMGQyYzE5MTUxNTk0ODc3M2ViOGViZjc5NjAyNmE2YjY3NmU0ZGY1YzA3ZTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.yMS-Kk24MZfGxnGk9EV-ele8jVMhnovRNiikgPx_miQ" alt="">made with godot, <a href="https://github.com/khuongduy354/astar-godot/">source</a></p>
+<h2 id="suggest-a-valid-pair-algorithm">Suggest a valid pair algorithm</h2>
+<ul>
+<li>This algorithm should based on above pathfinding, currently I find no better solution than brute force.</li>
+<li>Firstly, group pokemon with same images</li>
+<li>For each group, brute force run pathfinding on every pair (so n group =&gt; run n! times, O(n!) time complexity)</li>
+<li>Return first pair found ASAP.</li>
+</ul>
+<h2 id="scramble-board-algorithm">Scramble board algorithm</h2>
+<ul>
+<li>First, I need to move remaining pieces into a list, then I scramble that list</li>
+<li>Then I get all the placeable positions (in case the game has border or blocked cells) into the list, then I also scramble the list</li>
+<li>Then run the position list linearly and, keep popping the remaining pieces and place into position</li>
+</ul>
+<h1 id="implementations-c">Implementations (C++)</h1>
+<p>C++, Terminal-based, windows console library</p>
+
+    </div>
+  </div>
+
+    <div class="footer">
+  
+  <div class="footer-social">
+    
+      <span class="social-icon social-icon-twitter">
+        <a href="https://twitter.com/LKhngDuyHu43254" title="twitter" target="_blank" rel="noopener">
+          <img src="/images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-github">
+        <a href="https://github.com/khuongduy354" title="github" target="_blank" rel="noopener">
+          <img src="/images/social/github.svg" width="24" height="24" alt="github"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-linkedin">
+        <a href="https://www.linkedin.com/in/duy-hu%E1%BB%B3nh-7173931ba/" title="linkedin" target="_blank" rel="noopener">
+          <img src="/images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+        </a>
+      </span>
+    
+  </div>
+  
+</div>
+  </div>
+
+  
+
+  
+    <script type="text/javascript" src="/js/bundle.js"></script>
+  
+
+  
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

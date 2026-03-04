@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Duy&#39;s Devlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//localhost:1313//images/duyavatar.jpeg">
+  <link rel="canonical" href="//localhost:1313/posts/tiktok/" />
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/extended.css">
+
+  
+    <meta name="description" content="A study case where I implement Tóp Tóp, a Social Media mobile app in React Native &#43; Express.js"/>
+    <meta property="og:title" content="Tiktok devlog"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="DuyNiverse, technical blogs, insights,... "/>
+    <meta property="og:url" content="//localhost:1313/posts/tiktok/"/>
+    <meta property="og:image" content="//localhost:1313//images/thumbnail.jpg"/>
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    
+  
+
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  
+
+  
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  <div id="menu-main-mobile" class="menu-main-mobile">
+    <ul class="menu">
+        
+        
+            
+                <li class="menu-item-home">
+                    <a href="//localhost:1313/">Home</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-blog">
+                    <a href="//localhost:1313/posts/">Blog</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-about">
+                    <a href="//localhost:1313/about/">About</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-tags">
+                    <a href="//localhost:1313/tags/">Tags</a>
+                </li>
+            
+        
+    </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <a class="header-logo" href="/">Duy&#39;s Devlog</a>
+  <div class="menu-main">
+    <ul>
+      
+      
+      <li class="menu-item-home active">
+        <a href="/">
+          
+          <span>Home</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-blog active">
+        <a href="/posts/">
+          
+          <span>Blog</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-about active">
+        <a href="/about/">
+          
+          <span>About</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-tags active">
+        <a href="/tags/">
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
+    
+  <div class="blog">
+    
+      <div class="author">
+  <img width="30" class="author-image" src="/images/duyavatar.jpeg" alt="Duy Huynh" />
+  <span class="author-name">Duy Huynh</span>
+  <span class="author-divider"></span>
+  <span class="author-date">February 18, 2024</span>
+</div>
+    
+    <div class="intro">
+      <h1>Tiktok devlog<span class="dot">.</span></h1>
+      
+    </div>
+    <div class="content">
+      <h1 id="tiktok-clone">Tiktok Clone</h1>
+<p><strong>Programming blog</strong>
+I want to learn backend API development through making a tiktok API.
+It&rsquo;d be very basic, I can use to store my private photos/videos, beside that,
+I don&rsquo;t use it much, it&rsquo;s primarily for learning.</p>
+<p>Firstly, I list out some features I&rsquo;d like to implement:</p>
+<ul>
+<li>Authentication/Authorization: email, password based</li>
+<li>Upload videos</li>
+<li>Users follow users</li>
+<li>Allow to update users profile</li>
+<li>Like, comment videos</li>
+<li>Basic feed generation for users</li>
+</ul>
+<h1 id="tech-stack">Tech stack</h1>
+<p>Let use Express.js for backend, PostgresSQL (provider: ElephantSQL) for database. For frontend, I managed to find
+a React Native tiktok clone repo, so I forked it from there. I had no knowledge of React Native, but I&rsquo;ve used React before, so I learnt to setup and launch
+using expo, the code is very similar to React. Pretty much I have to do was add some extra UI components, and populate
+the UI by fetching the server. For cloud storage I used Cloudinary, it&rsquo;s free and easy to setup. To sum up:</p>
+<ul>
+<li>Express.js</li>
+<li>PostgresSQL (ElephantSQL)</li>
+<li>React Native</li>
+<li>Cloudinary</li>
+</ul>
+<h1 id="implementations">Implementations</h1>
+<h3 id="database">Database</h3>
+<p>I pick SQL as most data are related, ElephantSQL is free for 25mb which is enough to toy with. I draw schema using dbdesigner.net,
+then execute CREATE TABLE statements in ElephantSQL. The schema here: <a href="https://github.com/khuongduy354/tiktok-api/blob/master/tiktok-db-diagram.png">Schema</a>.<br>
+If I do it again I&rsquo;d pick supabase instead, ElephantSQL doesnt have a Table visualizer and is pretty inconvenient.</p>
+<p>To interact with database using Express.js, at first, I use pg package and raw SQL query (string). It gave me so much freedom, but it&rsquo;s ugly and later I learnt
+that it&rsquo;s vulnerable to SQL injection, so I change to knex.js, which is a query builder. Im not a fan of ORM though, as it adds overhead to my project.</p>
+<h3 id="auth">Auth</h3>
+<p>Classic email password auth, I use bcrypt to hash user password and store to database, and every login will grant a JWT token.</p>
+<ul>
+<li>Flow for signup: insert user row, with hashed password, and return a JWT token.</li>
+<li>For signin: user types email, password, that password is then hashed and compare to the one in database, if match, allow continue and return a JWT token.</li>
+<li>For every request that need auth (create video for e.g): that request must have Bearer <token> in Authorization header. I use Express middleware to validate
+that, and decide if user can make request.</li>
+</ul>
+<h3 id="design-and-setting-up-endpoints">Design and setting up endpoints</h3>
+<p>I use postman for testing, it get the job done very well for me. I learn to setup environment variables, setting scripts to save JWT token after<br>
+a sign in request, and that token is included in every request that need auth.</p>
+<h3 id="file-uploading">File uploading</h3>
+<p>I use multer.js package, with Cloudinary to store videos/images. Multer can take form data, and add file&rsquo;s buffer as req.file.buffer,
+and cloudinary allowing uploading using buffer, so I just stream straight from buffer to Cloudinary. There&rsquo;s no need for temporary local file,
+because multer allow in-memory storage.</p>
+<h3 id="feed-generation">Feed generation</h3>
+<p>About feed generation, there&rsquo;re only 2 modes: all videos or only followers videos. I intend to make a public/private flag for video
+later, but for now &ldquo;all&rdquo; will query all videos in database, randomly, limited to 10-20 videos and return to user. For followers&rsquo; videos, I add
+an inner join for follower. I still leave this part as raw sql, cuz it&rsquo;s hard to make in knex.</p>
+<p>Scroll to bottom attempt to fetch more.</p>
+<h3 id="other-stuffs">Other stuffs</h3>
+<p>For other data, just CRUD all the way. I learnt to make some very complex sql query, join a few tables, aggregate,&hellip;</p>
+<h1 id="issues-things-im-questioning">Issues (things im questioning)</h1>
+<ul>
+<li>User index: currently I&rsquo;m using SQL auto increment as it&rsquo;s simple, but I think enumerable userIDs arent secured. Therefore, all my other projects use UUID4.</li>
+<li>Atomicity of uploading video to Cloudinary, and inserting Video data in table: a case where video is uploaded to Cloudinary but failed to insert in table,
+which cause the video in Cloudinary unused. Maybe I&rsquo;ll attempt to delete video in Cloudinary if SQL insertion fails.</li>
+<li>Asymmetric unique value pair in Following table: I don&rsquo;t know if it&rsquo;s a correct term, but it&rsquo;s like this: Following is the linking table of followers and followee.<br>
+That table has 2 columns: follower_id and followee_id. For example a value pair: (1,2) is unique and cant be duplicate, (2,1) is okay.<br>
+A symmetric unique value pair is like a Friend table: (1,2) and (2,1) are considered conflict and cant be in the same table!<br>
+I&rsquo;m not setting that constraint yet, because don&rsquo;t know how to.
+To sum up:
+A follows B differ from B follows A
+But
+A friend of B same as B friend of A</li>
+</ul>
+<h1 id="how-to-upgrade-this-projectfuture-intentions">How to upgrade this project/Future intentions</h1>
+<ul>
+<li>A push notification server is needed, fanout to followees&hellip;</li>
+<li>Caching: especially feed data (hot topic and stuffs), should be add later, after video classification added (trending, popular, new,&hellip;)</li>
+<li>Recommendation system: machine learning to track user preference ?</li>
+<li>Message: a websocket server, I&rsquo;ve done many in web projects, but not in mobile app yet</li>
+</ul>
+<h1 id="deployment">Deployment</h1>
+<ul>
+<li>For frontend, I use eas and export to .apk file, very basic. One issue I encounter is image src with http protocol dont work,
+so i need to change them to https and it works!</li>
+<li>For backend, I use Vercel, at first, my public folder isn&rsquo;t empty, so It keeps popping error. Then i clear it and it works,
+turns out Backend on vercel can&rsquo;t hold any local file, lucky I use multer in memory storage and not as local files.</li>
+</ul>
+
+    </div>
+  </div>
+
+    <div class="footer">
+  
+  <div class="footer-social">
+    
+      <span class="social-icon social-icon-twitter">
+        <a href="https://twitter.com/LKhngDuyHu43254" title="twitter" target="_blank" rel="noopener">
+          <img src="/images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-github">
+        <a href="https://github.com/khuongduy354" title="github" target="_blank" rel="noopener">
+          <img src="/images/social/github.svg" width="24" height="24" alt="github"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-linkedin">
+        <a href="https://www.linkedin.com/in/duy-hu%E1%BB%B3nh-7173931ba/" title="linkedin" target="_blank" rel="noopener">
+          <img src="/images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+        </a>
+      </span>
+    
+  </div>
+  
+</div>
+  </div>
+
+  
+
+  
+    <script type="text/javascript" src="/js/bundle.js"></script>
+  
+
+  
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

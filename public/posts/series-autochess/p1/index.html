@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Duy&#39;s Devlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="//localhost:1313//images/duyavatar.jpeg">
+  <link rel="canonical" href="//localhost:1313/posts/series-autochess/p1/" />
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/extended.css">
+
+  
+    
+    <meta property="og:title" content=""/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="DuyNiverse, technical blogs, insights,... "/>
+    <meta property="og:url" content="//localhost:1313/posts/series-autochess/p1/"/>
+    <meta property="og:image" content="//localhost:1313//images/thumbnail.jpg"/>
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    
+  
+
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  
+
+  
+</head>
+
+
+
+
+<body class='page frame page-blog-single'>
+  <div id="menu-main-mobile" class="menu-main-mobile">
+    <ul class="menu">
+        
+        
+            
+                <li class="menu-item-home">
+                    <a href="//localhost:1313/">Home</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-blog">
+                    <a href="//localhost:1313/posts/">Blog</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-about">
+                    <a href="//localhost:1313/about/">About</a>
+                </li>
+            
+        
+            
+                <li class="menu-item-tags">
+                    <a href="//localhost:1313/tags/">Tags</a>
+                </li>
+            
+        
+    </ul>
+</div>
+  <div id="wrapper" class="wrapper">
+    <div class='header'>
+  <a class="header-logo" href="/">Duy&#39;s Devlog</a>
+  <div class="menu-main">
+    <ul>
+      
+      
+      <li class="menu-item-home active">
+        <a href="/">
+          
+          <span>Home</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-blog active">
+        <a href="/posts/">
+          
+          <span>Blog</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-about active">
+        <a href="/about/">
+          
+          <span>About</span>
+        </a>
+      </li>
+      
+      <li class="menu-item-tags active">
+        <a href="/tags/">
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+  <div id="toggle-menu-main-mobile" class="hamburger-trigger">
+    <button class="hamburger">Menu</button>
+  </div>
+</div>
+    
+  <div class="blog">
+    
+      <div class="author">
+  <img width="30" class="author-image" src="/images/duyavatar.jpeg" alt="Duy Huynh" />
+  <span class="author-name">Duy Huynh</span>
+  <span class="author-divider"></span>
+  <span class="author-date">January 1, 0001</span>
+</div>
+    
+    <div class="intro">
+      <h1><span class="dot">.</span></h1>
+      
+    </div>
+    <div class="content">
+      <h1 id="series-làm-game-autochess-như-đấu-trường-chân-lý-tft-nhưng-mà-đồ-họa-2d---p1">Series làm game AutoChess như Đấu Trường Chân Lý (TFT) nhưng mà đồ họa 2D - P1</h1>
+<h1 id="tổng-quan">Tổng quan</h1>
+<p>Vào một buổi tối nào đó tui nổi hứng và muốn làm con game này :D, Engine được dùng trong bài viết là Godot 4.3.</p>
+<h1 id="thiết-kế-bao-quát">Thiết kế bao quát</h1>
+<h2 id="bàn-cờ">Bàn cờ</h2>
+<p>Bàn cờ square (mỗi ô là một tam giác thay vì lục giác), vì thường 2D thì hình vuông sẽ dễ tính, còn 3D thì lục giác dễ tính hơn. Trong bài viết này mình sẽ làm game 2D.</p>
+<h2 id="chess-piece">Chess piece</h2>
+<ul>
+<li>Chỉ số: các chess piece sẽ có chỉ số hoàn toàn giống nhau (AD, AP, shields, magic, resists,&hellip;), nên có thể dùng 1 class chung cho các piece và inherit nó</li>
+<li>Tộc hệ: mỗi tộc hệ sẽ là 1 class riêng, và một chess piece có thể nhận 1 list of các class tộc hệ để nhận buff (Composition instead of inheritance)</li>
+<li>A.I: behavior tree: <a href="https://www.gamedeveloper.com/programming/behavior-trees-for-ai-how-they-work">https://www.gamedeveloper.com/programming/behavior-trees-for-ai-how-they-work</a></li>
+<li>Mana and abilities: Này để phần sau</li>
+</ul>
+<h2 id="match">Match</h2>
+<p>Điều khiển trận đấu, 1 vài thông tin cơ bản:</p>
+<ul>
+<li>Vòng: 1.0, 1.1,&hellip;</li>
+<li>Bảng Tộc hệ đã được kích của người chơi</li>
+<li>Thông tin của nhiều người chơi</li>
+</ul>
+<h1 id="triển-khai">Triển khai</h1>
+<p>Để triển khai cho phần 1 này thì tui chỉ tập trung cho khung game cơ bản: Có 1 bàn cờ, có 1 piece, kích được 1 tộc hệ, lắp được behavior tree và các pieces đó đánh nhau được</p>
+<h2 id="bàn-cờ-1">Bàn cờ</h2>
+<ul>
+<li>1 class Board, và 1 class Cell, Board.generate_board(X,Y) có thể vẽ một bàn cờ với kích thước X * Y, với mỗi ô là 1 Cell</li>
+<li>Mỗi 1 cell sẽ có 2 loại tọa độ:
+<ul>
+<li>Tọa độ map, số đẹp
+0,0 -&gt; dòng 1 cột 1 bàn cờ
+0,2 -&gt; dòng 2 cột</li>
+<li>Tọa độ khi vẽ = Tọa độ map * kích thước mỗi ô (16px)<br>
+Vì mỗi ô có thể có kích thước là 16px (hay 32px&hellip;,64px,&hellip;) nên cần nhân kích thước mới ra được tọa độ chính xác trên màn hinh</li>
+</ul>
+</li>
+</ul>
+<!-- TODO: vẽ trục vào đây -->
+<h2 id="chess_piece">Chess_Piece</h2>
+<ul>
+<li>1 class ChessPiece gồm:
+<ul>
+<li>ChessStat: class ChessStat mình muốn đây là 1 class riêng, json hoặc Godot Resource để dễ load data
+Ví dụ chỉ số Cho&rsquo;Gath:
+{
+&ldquo;hp&rdquo;: 10000,
+&ldquo;attack&rdquo;: 100,
+&hellip;
+}</li>
+<li>Tộc hệ: mảng các tộc hệ của chess</li>
+<li>BehaviorTree: Behavior của từng con mình sẽ tạo 1 file riêng, như vậy có thể lắp A.I con này vào con kia =))</li>
+<li>Combat: Thực hiện đánh nhau, dùng chiêu trúng hitbox j đó thì ăn dame
+<ul>
+<li>Hitbox: Hitbox là 1 class để nhận biết thứ tấn công (đạn, đòn đánh tay, blahblah&hellip;)</li>
+<li>Hurtbox: Hurtbox là 1 vùng khi Hitbox va vào thì sẽ ăn dame</li>
+<li>Logic Tính dame thì dĩ nhiên sẽ do Chess Piece quản lý, nhiều con có thể chặn dame blahblah khá ảo nên ko thể đẩy đống logic đó xuống hitbox/hurtbox</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="tộc-hệ">Tộc hệ</h2>
+<ul>
+<li>Triển khai tộc đấu sĩ trước, tại vì nó chỉ buff chỉ số (máu) thôi, như trên thì 1 chess piece sẽ gồm 1 list các tộc hệ</li>
+<li>Trong 1 class tộc hệ:
+<ul>
+<li>Có thể truy cập được Chess Piece (cha của nó) và tự kích hoạt khi đạt điều kiện</li>
+<li>Ví dụ Đấu sĩ: vào trận buff máu</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+
+    <div class="footer">
+  
+  <div class="footer-social">
+    
+      <span class="social-icon social-icon-twitter">
+        <a href="https://twitter.com/LKhngDuyHu43254" title="twitter" target="_blank" rel="noopener">
+          <img src="/images/social/twitter.svg" width="24" height="24" alt="twitter"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-github">
+        <a href="https://github.com/khuongduy354" title="github" target="_blank" rel="noopener">
+          <img src="/images/social/github.svg" width="24" height="24" alt="github"/>
+        </a>
+      </span>
+    
+      <span class="social-icon social-icon-linkedin">
+        <a href="https://www.linkedin.com/in/duy-hu%E1%BB%B3nh-7173931ba/" title="linkedin" target="_blank" rel="noopener">
+          <img src="/images/social/linkedin.svg" width="24" height="24" alt="linkedin"/>
+        </a>
+      </span>
+    
+  </div>
+  
+</div>
+  </div>
+
+  
+
+  
+    <script type="text/javascript" src="/js/bundle.js"></script>
+  
+
+  
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

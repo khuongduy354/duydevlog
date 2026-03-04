@@ -1,6 +1,6 @@
 ---
-title: You don't know it until you write it down.
-description: Keep all your messes in one place.
+title: "Duy Huynh"
+description: "Software engineer building tools people actually use."
 ---
 
-I'm a naturally insecured person (born with a reactive nervous system). I want to be a Software Engineer, which is a job requires dealing with high amount of uncertainties, how cynical ? Writing gather my train of thoughts before it crashes, and keep my sanity when making technical decisions.  
+Software engineer building tools people actually use — from a <strong>Google Summer of Code</strong> SDK, to Obsidian plugins with <strong>5,000+ combined installs</strong>, to AI-powered ecommerce. I care about performance, clean architecture, and shipping.
